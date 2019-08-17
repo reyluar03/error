@@ -1,0 +1,15 @@
+yum install screen wget -y && screen -S rey
+ 
+#PandaVPN CENTOS
+
+Premium: 
+yum install wget -y && wget https://raw.githubusercontent.com/reyluar18/rey/master/paid/centos6/premium.sh; bash premium.sh
+
+Vip: 
+yum install wget -y && wget https://raw.githubusercontent.com/reyluar18/rey/master/paid/centos6/vip.sh; bash vip.sh
+
+Private:
+yum install wget -y && wget https://raw.githubusercontent.com/reyluar18/rey/master/paid/centos6/private.sh; bash private.sh
+
+Free:
+yum install wget -y && wget https://raw.githubusercontent.com/reyluar18/rey/master/paid/centos6/free.sh; bash free.sh
