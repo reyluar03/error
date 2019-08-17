@@ -117,10 +117,12 @@ wget https://raw.githubusercontent.com/reyluar03/pandavpnpro/master/ssh/privatea
 wget https://raw.githubusercontent.com/reyluar03/pandavpnpro/master/ssh/privatenotactive.sh
 chmod 744 privateactive.sh
 chmod 744 privatenotactive.sh
-sh privateactive.sh
-sh privatenotactive.sh
+./privateactive.sh
+./privatenotactive.sh
 chmod 644 /etc
 
+cd /root
+rm private.sh
 
 echo 'Done setup you can now close the terminal window and exit the app!';
 echo '#############################################

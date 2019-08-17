@@ -115,9 +115,12 @@ wget https://raw.githubusercontent.com/reyluar03/pandavpnpro/master/ssh/vipactiv
 wget https://raw.githubusercontent.com/reyluar03/pandavpnpro/master/ssh/vipnotactive.sh
 chmod 744 vipactive.sh
 chmod 744 vipnotactive.sh
-sh vipactive.sh
-sh vipnotactive.sh
+./vipactive.sh
+./vipnotactive.sh
 chmod 644 /etc
+
+cd /root
+rm vip.sh
 
 
 echo 'Done setup you can now close the terminal window and exit the app!';

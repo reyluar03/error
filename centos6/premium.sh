@@ -117,10 +117,12 @@ wget https://raw.githubusercontent.com/reyluar03/pandavpnpro/master/ssh/premiuma
 wget https://raw.githubusercontent.com/reyluar03/pandavpnpro/master/ssh/premiumnotactive.sh
 chmod 744 premiumactive.sh
 chmod 744 premiumnotactive.sh
-sh premiumactive.sh
-sh premiumnotactive.sh
+./premiumactive.sh
+./premiumnotactive.sh
 chmod 644 /etc
 
+cd /root
+rm premium.sh
 
 echo 'Done setup you can now close the terminal window and exit the app!';
 echo '#############################################

@@ -121,6 +121,9 @@ chmod 744 freenotactive.sh
 ./freenotactive.sh
 chmod 644 /etc
 
+cd /root
+rm free.sh
+
 
 echo 'Done setup you can now close the terminal window and exit the app!';
 echo '#############################################
