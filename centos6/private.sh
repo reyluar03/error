@@ -1,0 +1,136 @@
+#!/bin/bash
+MYIP=$(wget -qO- ipv4.icanhazip.com);
+
+#set localtime
+ln -fs /usr/share/zoneinfo/Asia/Manila /etc/localtime
+
+# installing 
+wget http://dl.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
+rpm -Uvh epel-release-6-8.noarch.rpm
+yum install unzip -y
+yum update -y
+rm /etc/sysctl.conf
+
+# get file
+wget -O /etc/private.zip "https://raw.githubusercontent.com/reyluar03/pandavpnpro/master/centos6/private.zip"
+cd /etc/
+unzip private.zip
+cd
+wget -O /var/var.zip "https://raw.githubusercontent.com/reyluar03/pandavpnpro/master/centos6/var.zip"
+cd /var/
+unzip var.zip
+cd
+
+sysctl -p
+yum install mysql-server  dos2unix  nano squid openvpn easy-rsa httpd -y
+cd /etc/openvpn/login
+dos2unix auth_vpn
+chmod 755 auth_vpn
+cd /etc/openvpn/
+chmod 755 disconnect.sh
+chmod 755 connect.sh
+
+echo "acl Denied_ports port 1195-65535
+http_access deny Denied_ports
+acl to_vpn dst $MYIP
+http_access allow to_vpn
+acl inbound src all
+acl outbound dst $MYIP/32
+http_access allow inbound outbound
+http_access deny all
+http_port 8080 transparent
+http_port 3128 transparent
+http_port 8000 transparent
+http_port 53 transparent
+http_port 8888 transparent
+visible_hostname ReyLuarJr
+cache_mgr ReyLuarJr"| sudo tee /etc/squid/squid.conf	
+
+
+sudo /sbin/iptables -L -nsudo /sbin/iptables -L -n
+ sudo /sbin/iptables -L -n
+ /sbin/iptables -L -n
+ /etc/init.d/iptables save
+   /etc/init.d/iptables stop
+   iptables -F
+   iptables -X
+   iptables -t nat -F
+   iptables -t nat -X
+   iptables -t mangle -F
+   iptables -t mangle -X
+  service network restart
+ echo 0 > /selinux/enforce
+  SELINUX=enforcing
+ SELINUX=disabled
+
+iptables -t nat -A POSTROUTING -s 10.8.0.0/24 -o eth0 -j MASQUERADE
+iptables -t nat -A POSTROUTING -o venet0 -j SNAT --to-source `curl ipinfo.io/ip`
+iptables -t nat -A POSTROUTING -s 10.8.0.0/24 -j SNAT --to-source `curl ipinfo.io/ip`
+iptables -A LOGDROP -j DROP
+cd
+cd
+
+service iptables save
+service iptables restart
+echo 0 > /selinux/enforce
+  SELINUX=enforcing
+ SELINUX=disabled
+service openvpn restart
+service squid restart
+chmod 777 /var/www/html/stat/status.log.txt
+cd	
+
+#install Stunnel
+yum install stunnel -y 
+wget -O /etc/stunnel/stunnel.conf "http://cablenetvpn.com/newauto/stunnel.conf"
+wget -O /etc/stunnel/stunnel.pem "http://cablenetvpn.com/newauto/stunnel.pem"
+chown nobody:nobody /var/run/stunnel
+wget -O /etc/rc.d/init.d/stunnel "http://cablenetvpn.com/newauto/stunnel"
+chmod 744 /etc/rc.d/init.d/stunnel
+SEXE=/usr/bin/stunnel
+SEXE=/usr/sbin/stunnel
+ chmod +x /etc/rc.d/init.d/stunnel
+ /sbin/chkconfig --add stunnel
+ 
+#Install Dropbear
+rpm -Uvh http://ftp-stud.hs-esslingen.de/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+yum install dropbear -y
+wget -O /etc/init.d/dropbear "http://cablenetvpn.com/newauto/dropbear"
+
+#install PHP
+yum install gcc php-devel php-pear libssh2 libssh2-devel make -y
+pecl install -f ssh2 -y
+ echo extension=ssh2.so > /etc/php.d/ssh2.ini
+service httpd restart
+ php -m | grep ssh2
+ 
+#start service
+service httpd restart
+service stunnel start
+service dropbear start
+service openvpn restart
+service squid start
+
+#get active.txt
+cd
+wget https://raw.githubusercontent.com/reyluar03/pandavpnpro/master/ssh/privateactive.sh
+wget https://raw.githubusercontent.com/reyluar03/pandavpnpro/master/ssh/privatenotactive.sh
+chmod 744 privateactive.sh
+chmod 744 privatenotactive.sh
+./privateactive.sh
+./privatenotactive.sh
+chmod 644 /etc
+
+cd /root
+rm private.sh
+history -c
+
+echo 'Done setup you can now close the terminal window and exit the app!';
+echo '#############################################
+#      CENTOS 6 Setup openvpn with ssl/ssh  #
+#         PRIVATE INSTALLATION DONE!        #
+#       Setup by: Rey Luar Jr		        #
+#          Server System: Panda VPN Pro     #
+#            Owner: TEAM Panda VPN          #
+#############################################';
+
