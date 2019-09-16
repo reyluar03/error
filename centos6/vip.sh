@@ -81,10 +81,10 @@ cd
 
 #install Stunnel
 yum install stunnel -y 
-wget -O /etc/stunnel/stunnel.conf "http://cablenetvpn.com/newauto/stunnel.conf"
-wget -O /etc/stunnel/stunnel.pem "http://cablenetvpn.com/newauto/stunnel.pem"
+wget -O /etc/stunnel/stunnel.conf "https://raw.githubusercontent.com/reyluar03/error/master/centos6/stunnel.conf"
+wget -O /etc/stunnel/stunnel.pem "https://raw.githubusercontent.com/reyluar03/error/master/centos6/stunnel.pem"
 chown nobody:nobody /var/run/stunnel
-wget -O /etc/rc.d/init.d/stunnel "http://cablenetvpn.com/newauto/stunnel"
+wget -O /etc/rc.d/init.d/stunnel "https://raw.githubusercontent.com/reyluar03/error/master/centos6/stunnel"
 chmod 744 /etc/rc.d/init.d/stunnel
 SEXE=/usr/bin/stunnel
 SEXE=/usr/sbin/stunnel
@@ -94,7 +94,7 @@ SEXE=/usr/sbin/stunnel
 #Install Dropbear
 rpm -Uvh http://ftp-stud.hs-esslingen.de/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
 yum install dropbear -y
-wget -O /etc/init.d/dropbear "http://cablenetvpn.com/newauto/dropbear"
+wget -O /etc/init.d/dropbear "https://raw.githubusercontent.com/reyluar03/error/master/centos6/dropbear"
 
 #install PHP
 yum install gcc php-devel php-pear libssh2 libssh2-devel make -y
