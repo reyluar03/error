@@ -116,7 +116,7 @@ mkdir rey
 wget -O /root/rey/connection.php "https://raw.githubusercontent.com/reyluar03/error/master/vipcron.sh"
 echo "* * * * * /usr/bin/php /root/rey/connection.php
 * * * * * /bin/bash /root/rey/active.sh
-* * * * * /bin/bash /root/rey/not-ctive.sh" | tee -a /var/spool/cron/root
+* * * * * /bin/bash /root/rey/not-active.sh" | tee -a /var/spool/cron/root
 
 cd /root
 rm vip.sh
