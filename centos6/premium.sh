@@ -9,6 +9,9 @@ wget http://dl.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
 rpm -Uvh epel-release-6-8.noarch.rpm
 yum install unzip -y
 yum update -y
+yum install php php-pdo php-mysqli php-mysql php-gd php-mbstring.x86_64 -y
+yum install php-gd php-ldap php-odbc php-pear php-xml php-xmlrpc php-mbstring php-snmp php-soap curl curl-devel -y
+
 rm /etc/sysctl.conf
 
 # get file
