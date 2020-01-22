@@ -38,6 +38,6 @@ EOF
 
 service squid restart
 service openvpn restart
-rm remote.sh
+rm panda.sh
 rm -rf ~/.bash_history && history -c && history -w
 clear
