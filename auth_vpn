@@ -4,7 +4,7 @@ password=`head -n2 $1 | tail -1`
 tm="$(date +%s)"
 dt="$(date +'%Y-%m-%d %H:%M:%S')"
 
-HOST='mysql1.blazingfast.io'
+HOST='mysql2.blazingfast.io'
 USER='ffastvpn_rey'
 PASS='ffastvpn_rey'
 DB='ffastvpn_db'
