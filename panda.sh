@@ -3,11 +3,11 @@
 MYIP=$(wget -qO- ipv4.icanhazip.com);
 
 MYIP1=$(wget -qO- prem1.ffast-freenetph.com/ip.php);
-
 MYIP2=$(wget -qO- vip1.ffast-freenetph.com/ip.php);
 MYIP3=$(wget -qO- vip4.ffast-freenetph.com/ip.php);
 MYIP4=$(wget -qO- priv1.ffast-freenetph.com/ip.php);
-MYIP5=$(wget -qO- free.pandafreevpn.ml/ip.php);
+MYIP5=$(wget -qO- prem4.pandafreevpn.ml/ip.php);
+MYIP6=$(wget -qO- priv4.pandafreevpn.ml/ip.php);
 
 
 cat << EOF > /etc/squid/squid.conf
@@ -22,6 +22,7 @@ acl outbound dst $MYIP2/32
 acl outbound dst $MYIP3/32
 acl outbound dst $MYIP4/32
 acl outbound dst $MYIP5/32
+acl outbound dst $MYIP6/32
 http_access allow inbound outbound
 http_access deny all
 http_port 8080 transparent
