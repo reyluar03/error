@@ -31,6 +31,7 @@ dos2unix auth_vpn
 chmod 755 auth_vpn
 cd /etc/openvpn/
 chmod 755 disconnect.sh
+chmod 755 connect.sh
 
 echo "acl Denied_ports port 1195-65535
 http_access deny Denied_ports
