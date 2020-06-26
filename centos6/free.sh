@@ -68,6 +68,9 @@ sudo /sbin/iptables -L -nsudo /sbin/iptables -L -n
 iptables -t nat -A POSTROUTING -s 10.8.0.0/16 -o eth0 -j MASQUERADE
 iptables -t nat -A POSTROUTING -o venet0 -j SNAT --to-source `curl ipinfo.io/ip`
 iptables -t nat -A POSTROUTING -s 10.8.0.0/16 -j SNAT --to-source `curl ipinfo.io/ip`
+iptables -t nat -A POSTROUTING -s 10.9.0.0/16 -o eth0 -j MASQUERADE
+iptables -t nat -A POSTROUTING -o venet0 -j SNAT --to-source `curl ipinfo.io/ip`
+iptables -t nat -A POSTROUTING -s 10.9.0.0/16 -j SNAT --to-source `curl ipinfo.io/ip`
 iptables -A LOGDROP -j DROP
 
 cd
