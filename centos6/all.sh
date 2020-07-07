@@ -14,6 +14,7 @@ install () {
 yum install epel-release -y
 yum update -y
 yum install -y httpd nano squid
+yum install screen -y
 yum install -y mysql-server epel-release
 yum install -y openvpn sudo curl 
 yum install vixie-cron crontabs httpd git zip unzip epel-release -y
