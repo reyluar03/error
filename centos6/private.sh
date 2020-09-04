@@ -134,9 +134,9 @@ chmod +x l2tp_delete.sh
 wget https://raw.githubusercontent.com/reyluar03/error/master/l2tp_setup.sh && bash l2tp_setup.sh
 cd /root/rey
 wget -O /root/rey/l2tp-connection.php "https://raw.githubusercontent.com/reyluar03/error/master/l2tp-priv.php"
-echo "* * * * * /usr/bin/php /root/rey/l2tp-connection.php
-* * * * * /bin/bash /root/rey/l2tp-active.sh
-* * * * * /bin/bash /root/rey/l2tp-not-active.sh" | tee -a /var/spool/cron/root
+echo "20 * * * * /usr/bin/php /root/rey/l2tp-connection.php
+30 * * * * /bin/bash /root/rey/l2tp-active.sh
+30 * * * * /bin/bash /root/rey/l2tp-not-active.sh" | tee -a /var/spool/cron/root
 
 
 cd /root
