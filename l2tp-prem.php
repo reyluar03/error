@@ -53,7 +53,7 @@ if($query2->num_rows > 0)
 	{
 		$data2 .= '';
 		$toadd = $row2['user_name'];	
-		$data2 .= 'yes | sh l2tp_delete.sh '.$username.''.PHP_EOL;
+		$data2 .= 'yes | sh l2tp_delete.sh '.$toadd.''.PHP_EOL;
 	}
 }
 $location2 = '/root/rey/l2tp-not-active.sh';
