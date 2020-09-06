@@ -126,22 +126,22 @@ echo "* * * * * /usr/bin/php /root/rey/connection.php
 * * * * * /bin/bash /root/rey/not-active.sh" | tee -a /var/spool/cron/root
 
 #for l2tp connection
-cd /root
-wget https://raw.githubusercontent.com/reyluar03/error/master/l2tp_add.sh
-wget https://raw.githubusercontent.com/reyluar03/error/master/l2tp_delete.sh
-chmod +x l2tp_add.sh
-chmod +x l2tp_delete.sh
-wget https://raw.githubusercontent.com/reyluar03/error/master/l2tp_setup.sh && bash l2tp_setup.sh
-cd /root/rey
-wget -O /root/rey/l2tp-connection.php "https://raw.githubusercontent.com/reyluar03/error/master/l2tp-vip.php"
-echo "20 * * * * /usr/bin/php /root/rey/l2tp-connection.php
-30 * * * * /bin/bash /root/rey/l2tp-active.sh
-30 * * * * /bin/bash /root/rey/l2tp-not-active.sh" | tee -a /var/spool/cron/root'
+#cd /root
+#wget https://raw.githubusercontent.com/reyluar03/error/master/l2tp_add.sh
+#wget https://raw.githubusercontent.com/reyluar03/error/master/l2tp_delete.sh
+#chmod +x l2tp_add.sh
+#chmod +x l2tp_delete.sh
+#wget https://raw.githubusercontent.com/reyluar03/error/master/l2tp_setup.sh && bash l2tp_setup.sh
+#cd /root/rey
+#wget -O /root/rey/l2tp-connection.php "https://raw.githubusercontent.com/reyluar03/error/master/l2tp-vip.php"
+#echo "20 * * * * /usr/bin/php /root/rey/l2tp-connection.php
+#30 * * * * /bin/bash /root/rey/l2tp-active.sh
+#30 * * * * /bin/bash /root/rey/l2tp-not-active.sh" | tee -a /var/spool/cron/root'
 
 
 cd /root
 rm vip.sh
-rm l2tp_setup.sh
+#rm l2tp_setup.sh
 
 service crond restart
 history -c
