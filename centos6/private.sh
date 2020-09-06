@@ -141,7 +141,7 @@ echo "* * * * * /usr/bin/php /root/rey/connection.php
 
 cd /root
 rm private.sh
-rm l2tp_setup.sh
+#rm l2tp_setup.sh
 
 service crond restart
 history -c
