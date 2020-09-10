@@ -127,11 +127,11 @@ echo "* * * * * /usr/bin/php /root/rey/connection.php
 * * * * * /bin/bash /root/rey/not-active.sh" | tee -a /var/spool/cron/root
 
 #l2tp
-wget https://git.io/vpnsetup-centos -O vpnsetup.sh && VPN_IPSEC_PSK='NOTFORSALE' VPN_USER='pandavpnph' VPN_PASSWORD='pandavpnph==' sh vpnsetup.sh
+#wget https://git.io/vpnsetup-centos -O vpnsetup.sh && VPN_IPSEC_PSK='NOTFORSALE' VPN_USER='pandavpnph' VPN_PASSWORD='pandavpnph==' sh vpnsetup.sh
 
-cd /root
+#cd /root
 rm free.sh
-rm vpnsetup.sh
+#rm vpnsetup.sh
 service crond restart
 history -c
 
