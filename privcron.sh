@@ -28,7 +28,7 @@ if($query->num_rows > 0)
 		$username = $row['user_name'];
 		$password = $row['user_pass'];
 		$userid	= $row['user_id'];
-		$data .= '/usr/sbin/useradd -p $(openssl passwd -1 '.$password.') -M '.$username.' -u '.$userid.' -o --shell=/bin/false --no-create-home;'.PHP_EOL;
+		$data .= '/usr/sbin/useradd -p $(openssl passwd -1 '.$password.') -M '.$username.' -u '.$userid.' -o --shell=/bin/false;'.PHP_EOL;
 	}
 }
 $location = '/root/rey/active.sh';
