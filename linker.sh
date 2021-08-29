@@ -60,7 +60,7 @@ wget -O /usr/local/sbin/ssh.php https://raw.githubusercontent.com/reyluar03/erro
 service cron restart
 clear
 display_memo;
-echo -e "${GREEN} VIP Installed ${RESET}";
+echo -e "${GREEN} Private Installed ${RESET}";
 break;;
 "Quit")
 echo "Installation Cancelled"
