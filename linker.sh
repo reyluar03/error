@@ -38,6 +38,10 @@ display_memo;
 wget -O /usr/local/sbin/ssh.php https://raw.githubusercontent.com/reyluar03/error/master/cron.sh -q
 (crontab -l 2>/dev/null || true; echo "* * * * * /bin/bash /root/cron.sh >/dev/null 2>&1") | crontab -
 service cron restart
+rm -rf /root/linker.sh
+history -c
+cd /root
+echo "" > .bash_history
 clear
 display_memo;
 echo -e "${GREEN} Premium Installed ${RESET}";
@@ -47,6 +51,10 @@ display_memo;
 wget -O /usr/local/sbin/ssh.php https://raw.githubusercontent.com/reyluar03/error/master/vipcron.sh -q
 (crontab -l 2>/dev/null || true; echo "* * * * * /bin/bash /root/cron.sh >/dev/null 2>&1") | crontab -
 service cron restart
+rm -rf /root/linker.sh
+history -c
+cd /root
+echo "" > .bash_history
 clear
 display_memo;
 echo -e "${GREEN} VIP Installed ${RESET}";
@@ -56,6 +64,10 @@ display_memo;
 wget -O /usr/local/sbin/ssh.php https://raw.githubusercontent.com/reyluar03/error/master/privcron.sh -q
 (crontab -l 2>/dev/null || true; echo "* * * * * /bin/bash /root/cron.sh >/dev/null 2>&1") | crontab -
 service cron restart
+rm -rf /root/linker.sh
+history -c
+cd /root
+echo "" > .bash_history
 clear
 display_memo;
 echo -e "${GREEN} Private Installed ${RESET}";
