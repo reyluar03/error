@@ -1,9 +1,7 @@
 echo "Installing Server";
 apt-get install php php-mysqli php-mysql php-gd php-mbstring -y > /dev/null 2>&1
+mkdir /root/rey
 EOM
-
-cd /root
-mkdir /rey
 
 /bin/cat <<"EOM" >/root/cron.sh
 php /usr/local/sbin/ssh.php
